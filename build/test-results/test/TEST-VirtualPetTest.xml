@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="VirtualPetTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-07T03:59:59" hostname="LAPTOP-FTCT9EVG" time="0.063">
+  <properties/>
+  <testcase name="addValueToMeterWithInput()" classname="VirtualPetTest" time="0.063"/>
+  <system-out><![CDATA[Dog Status
+Hunger: 60
+
+Actions
+1. Feed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
