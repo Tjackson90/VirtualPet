@@ -15,7 +15,7 @@ public class VirtualPetApp {
         String[] needs = {"Hunger: ", "Loved: ", "Bladder: ", "Tired: "};
         String[] playerInput = {"1. Feed " + petName, "2. Praise " + petName, "3. Take " + petName + " for a walk.",
                 "4. Let " + petName + " sleep.", "5. Exit Game"};
-        
+
         System.out.println(petName + "'s" + " Needs");
         System.out.println(needs[0] + newPet.getHunger());
         System.out.println(needs[1] + newPet.getLoved());
@@ -31,12 +31,20 @@ public class VirtualPetApp {
         System.out.println(playerInput[4]);
         String select = input.nextLine();
 
+        boolean gameRunning = true;
 
-        while (true) {
+        while (gameRunning) {
+
+            if (newPet.checkDead()) {
+                System.out.println("Game Over...");
+                gameRunning = false;
+                System.exit(0);
+            }
+
             if (select.contains("1")) {
                 System.out.println("You feed " + petName);
                 newPet.feed();
-                
+
             } else if (select.contains("2")) {
                 System.out.println("You just pet " + petName);
                 newPet.praise();
@@ -54,13 +62,14 @@ public class VirtualPetApp {
                 System.exit(0);
             }
 
+
             System.out.println(petName + "'s" + " Needs");
             System.out.println(needs[0] + newPet.getHunger());
             System.out.println(needs[1] + newPet.getLoved());
             System.out.println(needs[2] + newPet.getBladder());
             System.out.println(needs[3] + newPet.getTired());
             System.out.println(" ");
-            
+
             System.out.println("Commands");
             System.out.println(playerInput[0]);
             System.out.println(playerInput[1]);
@@ -68,9 +77,13 @@ public class VirtualPetApp {
             System.out.println(playerInput[3]);
             System.out.println(playerInput[4]);
             select = input.nextLine();
+
+
         }
     }
 }
+
+
     
 
 

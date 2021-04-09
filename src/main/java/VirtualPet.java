@@ -1,23 +1,22 @@
 
 
 public class VirtualPet {
-   
 
 
     private int hunger;
     private int loved;
     private int bladder;
     private int tired;
-    
-    
+
+
     public VirtualPet(int hunger, int loved, int bladder, int tired) {
-        
+
         this.hunger = hunger;
         this.loved = loved;
         this.bladder = bladder;
         this.tired = tired;
-       
-        
+
+
     }
 
     public int getHunger() {
@@ -25,23 +24,31 @@ public class VirtualPet {
     }
 
     public int getLoved() {
-      return loved;
+        return loved;
     }
 
     public int getBladder() {
-      return bladder;
+        return bladder;
     }
 
     public int getTired() {
-       return tired;
+        return tired;
     }
-    
-    
+
+    public boolean checkDead() {
+        if (hunger <= 0 || loved <= 0 || bladder <= 0 || tired <= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public void feed() {
         if (hunger >= 0) {
             hunger += 10;
             bladder += 10;
-            tired -=10;
+            tired -= 10;
         } else {
             hunger = 0;
             System.out.println("You died!");
@@ -82,14 +89,15 @@ public class VirtualPet {
             System.exit(0);
         }
     }
+
     private void Tick() {
         hunger -= 1;
         loved -= 1;
         bladder -= 1;
         tired -= 1;
-        
+
     }
-    
+
 }
 
         

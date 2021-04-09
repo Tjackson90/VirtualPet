@@ -1,6 +1,6 @@
-VirtualPet.java
- VirtualPet
 GameLoop.java
  GameLoop
+VirtualPet.java
+ VirtualPet
 VirtualPetApp.java
  VirtualPetApp
